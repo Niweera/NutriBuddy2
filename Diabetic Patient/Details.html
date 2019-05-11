@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <title>NutriBuddy | Home</title>
+
+
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css">    
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-datepicker.css">    
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="../assets/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <!-- Theme color -->
+    <link id="switcher" href="../assets/css/theme-color/default-theme.css" rel="stylesheet">     
+
+    <!-- Main style sheet -->
+    <link href="../style.css" rel="stylesheet">    
+
+ 
+   <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>        
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+    
+	
+	<link href="assets/popup_form.css" rel="stylesheet">  
+	
+	<link rel="shortcut icon" href="../assets/img/icon.png" type="image/x-icon" />
+	
+	 <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+	
+	<script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyA1SGhU7-cunQ7VIrCmAVWSYHfe9-FLb6w",
+                authDomain: "foodanalyser.firebaseapp.com",
+                databaseURL: "https://foodanalyser.firebaseio.com",
+                projectId: "foodanalyser",
+                storageBucket: "foodanalyser.appspot.com",
+                messagingSenderId: "67786128135",
+                appId: "1:67786128135:web:c5de525f78d13905"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var db = firebase.firestore();
+        </script>
+		
+	
+	  </head>
+  <body>  
+  
+      <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+      <span>Top</span>
+    </a>
+	
+	
+	  <section id="mu-slider">
+    <div class="mu-slider-area"> 
+      <!-- Top slider -->
+      <div class="mu-top-slider">
+        <!-- Top slider single slide -->
+        <div class="mu-top-slider-single">
+          <img src="../assets/img/diab.jpg" alt="img">
+          <!-- Top slider content -->
+          <div class="mu-top-slider-content">
+            <span class="mu-slider-small-title">Welcome</span>
+            <h2 class="mu-slider-title">To NutriBuddy</h2>
+            <p>“People with high blood pressure, diabetes - those are conditions brought about by life style. If you change the life style, those conditions will leave.” </p>           
+       <a href="#" class="mu-readmore-btn" onclick="openForm()">BMI Counter</a>
+			<a href="../counter.html" class="mu-readmore-btn">Calorie Counter</a>
+		  </div>
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->    
+      </div>
+    </div>
+	
+	
+	<div class="form-popup" id="myForm">
+	<form action="/action_page.php" class="form-container">
+	
+<table border=1>
+<tr>
+<td><div align=CENTER>Your Weight (kg)</div></td>
+<td><div align=CENTER>Your Height (cm)</div></td>
+<td><div align=CENTER>Your BMI</div></td>
+</tr>
+
+<tr><input type=TEXT name=my_comment size=20></tr>
+
+<tr>
+<td><input type=TEXT name=weight  size=10 onFocus="this.form.weight.value=''"></td>
+<td><input type=TEXT name=height  size=10 onFocus="this.form.height.value=''"></td>
+<td><input type=TEXT name=bmi     size=8 ></td></tr>
+
+</table><br>
+
+<P>
+<input type="button" VALUE="Let's see" onClick="computeform(this.form)" class="btn btn-primary">
+<input type="reset"  VALUE="Reset" onClick="ClearForm(this.form)" class="btn btn-primary"><br>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+</FORM>
+
+<HR>
+
+
+<hr>
+
+<script type="text/javascript">
+<!-- hide this script tag's contents from old browsers
+
+//Body Mass calculator- by John Scott (johnscott03@yahoo.com)
+//Visit JavaScript Kit (http://javascriptkit.com) for script
+//Credit must stay intact for use
+
+function ClearForm(form){
+
+    form.weight.value = "";
+    form.height.value = "";
+    form.bmi.value = "";
+    form.my_comment.value = "";
+
+}
+
+function bmi(weight, height) {
+
+          bmindx=weight/eval(height*height);
+          return bmindx;
+}
+
+function checkform(form) {
+
+       if (form.weight.value==null||form.weight.value.length==0 || form.height.value==null||form.height.value.length==0){
+            alert("\nPlease complete the form first");
+            return false;
+       }
+
+       else if (parseFloat(form.height.value) <= 0||
+                parseFloat(form.height.value) >=500||
+                parseFloat(form.weight.value) <= 0||
+                parseFloat(form.weight.value) >=500){
+                alert("\nPlease enter values again. \nWeight in kilos and \nheight in cm");
+                ClearForm(form);
+                return false;
+       }
+       return true;
+
+}
+
+function computeform(form) {
+
+       if (checkform(form)) {
+
+       yourbmi=Math.round(bmi(form.weight.value, form.height.value/100));
+       form.bmi.value=yourbmi;
+
+       if (yourbmi >40) {
+          form.my_comment.value="You are grossly obese";
+       }
+
+       else if (yourbmi >30 && yourbmi <=40) {
+          form.my_comment.value="You are obese";
+       }
+
+       else if (yourbmi >27 && yourbmi <=30) {
+          form.my_comment.value="You are very fat";
+       }
+
+       else if (yourbmi >22 && yourbmi <=27) {
+          form.my_comment.value="You are fat";
+       }
+
+       else if (yourbmi >=21 && yourbmi <=22) {
+          form.my_comment.value="Keep it up!!";
+       }
+
+       else if (yourbmi >=18 && yourbmi <21) {
+          form.my_comment.value="You are thin";
+       }
+
+       else if (yourbmi <18 && yourbmi <18) {
+          form.my_comment.value="You are very thin";
+       }
+
+
+       }
+       return;
+}
+ // -- done hiding from old browsers -->
+</script>
+ </div> 
+	<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+  </section>
+  <section id="mu-about-us">
+    <div class="container">  
+              <div class="mu-title">
+              <span class="mu-subtitle">Discover</span>
+              <h2>Your Daily Carbs intake</h2>
+              <i class="fa fa-spoon"></i>              
+              <span class="mu-title-bar"></span>
+            </div>
+<form>
+<table cellspecing="500" cellpadding="20" align="center">
+
+<tr><td><h3><b>Fill out the form below.</b></h3></td></tr><tr></tr><tr></tr>
+
+<tr>
+<td>Female:
+  <input id="female" type="radio" name="gender" onchange="calsPerDay()">
+</td>
+<td>Male:
+  <input id="male" type="radio" name="gender" onchange="calsPerDay()" checked>
+</td>
+</tr>
+
+<tr>
+<td>Age:</td>
+  <td><input id="age" type="number" oninput="calsPerDay()" value="50">years</td>
+</tr><
+
+<tr>
+<td>Height:</td>
+ <td><input id="height" type="number" oninput="calsPerDay()" value="70">in inches (12 inches=1 foot)</td>
+</tr>
+
+<tr>
+<td>Weight:</td>
+ <td><input id="weight" type="number" oninput="calsPerDay()" value="225">in pounds</td>
+</tr>
+<tr>
+<td>Base metabolic rate:</td> 
+<td><span id="totalCals"></span> kcal per day</td>
+</tr><br>
+
+</table>
+</form>
+
+<script type="text/javascript">
+function calsPerDay() {
+  function find(id) { return document.getElementById(id) }
+
+  var age = find("age").value
+  var height = find("height").value * 2.54
+  var weight = find("weight").value / 2.2
+  var result = 0
+  if (find("male").checked) 
+    result = 66.47 + (13.75 * weight) + (5.0 * height - (6.75 * age))
+  else if (find("female").checked)
+    result = 665.09 + (9.56 * weight) + (1.84 * height - (4.67 * age))
+  find("totalCals").innerHTML = Math.round( result )
+}
+calsPerDay()
+
+   </script>
+   
+<br>	
+<h3>How to count calories per day?</h3><br>
+<font face="verdana"><p>As you now know, Calories are the unit to measure intake energy or food energy and already stored energy in our body.
+Food energy is what we obtain from eating foods. This is the energy we mostly measure as calories per day or counting calories.
+All foods have different amount of energy or calories in them. Some have a lot of calories and some have a lot less. 
+How much calories a food product contains, It depends on macro-nutrients types and serving size of a particular food. 
+You can use to our web site to find out this:</p><br>
+
+ <form class="example" action="" align="center">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Names..." name="names" >
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form><br>
+				
+     
+	 <table align="center" cellpadding="8" cellspacing="8" border="1"  width = "65%" id="myTable">
+		<tr bgcolor="#73c4ba">
+		<th><b><center>Name</center></b></th>
+		<th><b><center>Sugar/Carbohydrates</center></b></th>
+		<th><b><center>Total Calories</center></b></th>
+</tr>
+
+        <script type="text/javascript">
+
+            const ls = document.querySelector("#myTable");
+            db.collection("Beverages").get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    console.log(doc.data().name);
+					
+                    console.log(doc.data().Sugar);
+                    console.log(doc.data().Calories);
+                    let raw = document.createElement('TR');
+                    let usr = document.createElement('TD');
+                    let usr1 = document.createElement('TD');
+                    let usr2 = document.createElement('TD');
+                    usr.textContent = doc.data().name;
+                    usr1.textContent = doc.data().Sugar;
+                    usr2.textContent = doc.data().Calories;
+                    ls.appendChild(raw);
+                    ls.appendChild(usr);
+                    ls.appendChild(usr1);
+                    ls.appendChild(usr2);
+
+                });
+            });
+
+            const ls1 = document.querySelector("#myTable");
+            db.collection("Daily Meals").get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    console.log(doc.data().name);
+                    console.log(doc.data().Carbohydrates);
+                    console.log(doc.data().Calories);
+                    let raw = document.createElement('TR');
+                    let usr = document.createElement('TD');
+                    let usr1 = document.createElement('TD');
+                    let usr2 = document.createElement('TD');
+                    usr.textContent = doc.data().name;
+                    usr1.textContent = doc.data().Carbohydrates;
+                    usr2.textContent = doc.data().Calories;
+                    ls.appendChild(raw);
+                    ls1.appendChild(usr);
+                    ls1.appendChild(usr1);
+                    ls1.appendChild(usr2);
+                });
+            });
+
+            const ls2 = document.querySelector("#myTable");
+            db.collection("Dessert").get().then((snapshot) => {
+                snapshot.docs.forEach(doc => {
+                    console.log(doc.data().name);
+                    console.log(doc.data().Carbohydrates);
+                    console.log(doc.data().Calories);
+                    let raw = document.createElement('TR');
+                    let usr = document.createElement('TD');
+                    let usr1 = document.createElement('TD');
+                    let usr2 = document.createElement('TD');
+                    usr.textContent = doc.data().name;
+                    usr1.textContent = doc.data().Carbohydrates;
+                    usr2.textContent = doc.data().Calories;
+                    ls.appendChild(raw);
+                    ls2.appendChild(usr);
+                    ls2.appendChild(usr1);
+                    ls2.appendChild(usr2);
+                });
+            });
+
+        </script>
+		
+		
+        <script>
+            function myFunction() {
+                // Declare variables 
+                var input, filter, table, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("#myTable");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
+		</font>
+</table>
+    </div>
+  </section>
+  
+ <section>
+   
+
+  
+  
+  
+  
+  
+  
+  
+  
+    <!-- jQuery library -->
+  <script src="../assets/js/jquery.min.js"></script>  
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../assets/js/bootstrap.js"></script>   
+  <!-- Slick slider -->
+  <script type="text/javascript" src="../assets/js/slick.js"></script>
+  <!-- Counter -->
+  <script type="text/javascript" src="../assets/js/waypoints.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.counterup.js"></script>
+  <!-- Date Picker -->
+  <script type="text/javascript" src="../assets/js/bootstrap-datepicker.js"></script> 
+  <!-- Mixit slider -->
+  <script type="text/javascript" src="../assets/js/jquery.mixitup.js"></script>
+  <!-- Add fancyBox -->        
+  <script type="text/javascript" src="../assets/js/jquery.fancybox.pack.js"></script>
+
+  <!-- Custom js -->
+  <script src="../assets/js/custom.js"></script> 
