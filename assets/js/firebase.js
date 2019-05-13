@@ -65,13 +65,3 @@ function searchENumbers() {
   }
 }
 //end of js file to the allergic_details.html file
-
-
-
-// const items = [1, 29, 47];
-// const copy = [];
-
-// items.forEach(function(item){
-//   copy.push(item*item);
-// });
-// print(copy);
