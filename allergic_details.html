@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+
+    <title>NutriBuddy | Allergic</title>
+
+
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">   
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">    
+    <!-- Date Picker -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datepicker.css">    
+    <!-- Fancybox slider -->
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" /> 
+    <!-- Theme color -->
+    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">     
+
+    <!-- Main style sheet -->
+    <link href="style.css" rel="stylesheet">
+
+   <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>        
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+
+    
+    
+
+  </head>
+  <body>  
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+  <!-- Firebase credentials -->
+  <script src="assets/js/firebase.js"></script> 
+
+  
+  <!--START SCROLL TOP BUTTON -->
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+      <span>Top</span>
+    </a>
+  <!-- END SCROLL TOP BUTTON -->
+
+  <!-- Start header section -->
+  <header id="mu-header">  
+      <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
+        <div class="container">
+          <div class="navbar-header">
+            <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- LOGO -->                                                        
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a> 
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+              <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav"><li><a href="#mu-slider">HOME</a></li>
+            </ul>
+          </div>
+        </div>          
+      </nav> 
+    </header>
+    <!-- End header section -->
+ 
+
+  <!-- Start slider  -->
+  <section id="mu-slider">
+    <div class="mu-slider-area"> 
+      <!-- Top slider -->
+      <div class="mu-top-slider">
+        <!-- Top slider single slide -->
+        <div class="mu-top-slider-single">
+          <img src="assets/img/allergies.jpg" alt="img">
+          <!-- Top slider content -->
+          <div class="mu-top-slider-content">
+            <span class="mu-slider-small-title">Welcome</span>
+            <h2 class="mu-slider-title">To NutriBuddy</h2>
+            <p>“Are you looking for foods which are not using harmful preservatives? Find what you are looking for!” </p>
+
+            <div class="row">
+              <div class="col-md-5"></div>
+              <div class="col-md-2 text-center">
+                <a href="#mu-about-us" class="mu-readmore-btn btn-block">Let's Go</a>
+              </div>
+              <div class="col-md-5"></div>
+            </div>
+            
+
+            
+            
+          </div>
+          <!-- / Top slider content -->
+        </div>
+        <!-- / Top slider single slide -->    
+        <!-- Top slider single slide -->
+      </div>
+    </div>
+  </section>
+  <!-- End slider  -->
+
+  <!-- Start About us -->
+  <section id="mu-about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-about-us-area">
+            <div class="mu-title">
+              <span class="mu-subtitle">Discover</span>
+              <h2>All about your favourite foods</h2>
+              <i class="fa fa-spoon"></i>
+              <span class="mu-title-bar"></span>
+            </div>
+            <div class="row">
+              <h2 class="text-center">Select the artificial ingredient</h2><br>
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <!-- Form to get data from db -->
+                  <div class="form-check row">
+                    <div class="col-md-3">
+                      <input type="radio" class="form-check-input" id="e321" name="ins" checked>
+                      <label class="form-check-label" for="e321">E321</label> 
+                    </div>
+                    <div class="col-md-3">
+                      <input type="radio" class="form-check-input" id="e125" name="ins">
+                      <label class="form-check-label" for="e125">E125</label>
+                    </div>
+                    <div class="col-md-3">
+                      <input type="radio" class="form-check-input" id="e200" name="ins">
+                      <label class="form-check-label" for="e200">E200</label>
+                    </div>
+                    <div class="col-md-3">
+                      <input type="radio" class="form-check-input" id="e100" name="ins">
+                      <label class="form-check-label" for="e100">E100</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                      <br>
+                      <button type="submit" class="btn btn-dark btn-block" onclick="searchENumbers()">Search</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                  </div>
+                <!-- Form to get data from db -->
+              </div>
+			        <div class="col-md-4"></div>
+            </div>
+            <!-- Database retrieval-->
+            <div id="testDiv">
+              <p id="ee321"></p>
+              <p id="ee125"></p>
+              <p id="ee200"></p>
+              <p id="ee100"></p>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10" id="dataTableDiv">
+                <!-- The table will appear here -->
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+            <!-- Database retrieval-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About us -->
+
+  <!-- Start Footer -->
+  <footer id="mu-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="mu-footer-area">
+            <div class="mu-footer-social">
+            <a href="#"><span class="fa fa-facebook"></span></a>
+            <a href="#"><span class="fa fa-twitter"></span></a>
+            <a href="#"><span class="fa fa-google-plus"></span></a>
+            <a href="#"><span class="fa fa-linkedin"></span></a>
+            <a href="#"><span class="fa fa-youtube"></span></a>
+          </div>
+          <div class="mu-footer-copyright">
+            <p>Designed by <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a></p>
+          </div>         
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+  <!-- jQuery library -->
+  <script src="assets/js/jquery.min.js"></script>  
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>   
+  <!-- Slick slider -->
+  <script type="text/javascript" src="assets/js/slick.js"></script>
+  <!-- Counter -->
+  <script type="text/javascript" src="assets/js/waypoints.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.counterup.js"></script>
+  <!-- Date Picker -->
+  <script type="text/javascript" src="assets/js/bootstrap-datepicker.js"></script> 
+  <!-- Mixit slider -->
+  <script type="text/javascript" src="assets/js/jquery.mixitup.js"></script>
+  <!-- Add fancyBox -->        
+  <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
+
+  <!-- Custom js -->
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>
