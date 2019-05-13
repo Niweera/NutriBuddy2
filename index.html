@@ -38,6 +38,15 @@
 
   </head>
   <body>  
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+  <!-- Firebase credentials -->
+  <script src="assets/js/firebase.js"></script> 
+
   <!-- Pre Loader -->
   <div id="aa-preloader-area">
     <div class="mu-preloader">
@@ -94,20 +103,38 @@
             <p>“To ensure good health: eat lightly, breathe deeply, live moderately, cultivate cheerfulness, and maintain an interest in life.” </p>
 
             <div class="row">
+              <p>Select User Type</p>
               <div class="col-md-5"></div>
               <div class="col-md-2 text-center">
-                  <form>
-                    <div class="form-group">
-                      <p>I am a:</p>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Diabetic Patient</option>
-                        <option>Sportsman</option>
-                        <option>Random DUDE</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="mu-readmore-btn btn-block">Let's Go</button><br>
-                    <a href="diabetic_counter.html" class="mu-readmore-btn btn-block">Calorie Counter</a>
-                  </form>
+                
+                <!-- Rendering list items from the Firebase DB -->
+                <div id="selectDivOne">
+                  <script type="text/javascript">
+                  //=========================
+                  var db = firebase.firestore();
+                  //=========================
+
+                  db.collection('Users').get().then((snapshot) => {
+                    var select_option = '<div class="dropdown"><button class="mu-readmore-btn btn-block" type="button" data-toggle="dropdown"><span class="h3">I am a</span></button><ul class="dropdown-menu">';
+                        snapshot.docs.forEach(doc => {
+                            let items = doc.data();
+
+                            /* Make data suitable for rendering */
+                            name = JSON.stringify(items.name);
+                            url = JSON.stringify(items.url);
+                          
+                            /* Update the components state with query result */ 
+                            select_option += '<li><a href="/' + JSON.parse(url) + '">' + JSON.parse(name) + '</a></li>';
+                            
+                        });
+                    select_option += '</ul></div>';
+                    document.getElementById('selectDivOne').innerHTML = select_option;
+                  });
+                  </script>
+                </div>
+                <!-- Rendering list items from the Firebase DB -->
+                <br>
+                <a href="diabetic_counter.html" class="mu-readmore-btn btn-block">Calorie Counter</a>
               </div>
               <div class="col-md-5"></div>
             </div>
@@ -129,20 +156,37 @@
             <p>"If you don't take care of your body, how are you going to live healthily?"</p>           
             
             <div class="row">
+              <p>Select User Type</p>
               <div class="col-md-5"></div>
               <div class="col-md-2 text-center">
-                  <form>
-                    <div class="form-group">
-                      <p class="mb-0">I am a:</p>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Diabetic Patient</option>
-                        <option>Sportsman</option>
-                        <option>Random DUDE</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="mu-readmore-btn btn-block">Let's Go</button><br>
-                    <a href="diabetic_counter.html" class="mu-readmore-btn btn-block">Calorie Counter</a>
-                  </form>
+                <!-- Rendering list items from the Firebase DB -->
+                <div id="selectDivTwo">
+                  <script type="text/javascript">
+                  //=========================
+                  var db = firebase.firestore();
+                  //=========================
+
+                  db.collection('Users').get().then((snapshot) => {
+                    var select_option = '<div class="dropdown"><button class="mu-readmore-btn btn-block" type="button" data-toggle="dropdown"><span class="h3">I am a</span></button><ul class="dropdown-menu">';
+                        snapshot.docs.forEach(doc => {
+                            let items = doc.data();
+
+                            /* Make data suitable for rendering */
+                            name = JSON.stringify(items.name);
+                            url = JSON.stringify(items.url);
+                          
+                            /* Update the components state with query result */ 
+                            select_option += '<li><a href="/' + JSON.parse(url) + '">' + JSON.parse(name) + '</a></li>';
+                            
+                        });
+                    select_option += '</ul></div>';
+                    document.getElementById('selectDivTwo').innerHTML = select_option;
+                  });
+                  </script>
+                </div>
+                <!-- Rendering list items from the Firebase DB -->
+                <br>
+                <a href="diabetic_counter.html" class="mu-readmore-btn btn-block">Calorie Counter</a>
               </div>
               <div class="col-md-5"></div>
             </div>
@@ -354,9 +398,7 @@
   <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js"></script>
 
   <!-- Custom js -->
-  <script src="assets/js/custom.js"></script> 
-
-  
+  <script src="assets/js/custom.js"></script>
 
   </body>
 </html>
