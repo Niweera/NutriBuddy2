@@ -26,8 +26,7 @@
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">     
 
     <!-- Main style sheet -->
-    <link href="style.css" rel="stylesheet">    
-    <link href="headerstyle.css" rel="stylesheet">    
+    <link href="style.css" rel="stylesheet">
 
    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>        
@@ -52,21 +51,32 @@
     </a>
   <!-- END SCROLL TOP BUTTON -->
 
-  <!-- START HEADER -->
-  <header>
-    <div class="navbar">
-      <a href="./" class="logo">NutriBuddy</a>
-      <div class="rightnav">
-        <a class="active" href="./">Home</a> 
-      <div class="dropdown">
-        <button class="dropbtn"><a href="#aboutus">About Us</a></button>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn"><a href="#contactus">Contact Us</a></button>
-      </div>
-    </div>
-  </header>
-  <!-- END HEADER -->
+  <!-- Start header section -->
+  <header id="mu-header">  
+      <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
+        <div class="container">
+          <div class="navbar-header">
+            <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- LOGO -->                                                        
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a> 
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
+              <li><a href="#mu-slider">HOME</a></li>
+              <li><a href="#mu-about-us">ABOUT US</a></li>                       
+              <li><a href="#mu-contact">CONTACT</a></li> 
+            </ul>                            
+          </div><!--/.nav-collapse -->       
+        </div>          
+      </nav> 
+    </header>
+    <!-- End header section -->
  
 
   <!-- Start slider  -->
@@ -107,7 +117,6 @@
   <!-- End slider  -->
 
   <!-- Start About us -->
-  <a name="aboutus"></a> 
   <section id="mu-about-us">
     <div class="container">
       <div class="row">
@@ -193,7 +202,6 @@
 
 
   <!-- Start Contact section -->
-  <a name="contactus"></a> 
   <section id="mu-contact">
     <div class="container">
       <div class="row">
@@ -265,6 +273,29 @@
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.76251092662!2d79.86893681426776!3d6.918970420360216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25974dba79edb%3A0xd74a12930e8efe55!2sFaculty+of+Medicine%2C+University+Of+Colombo!5e0!3m2!1sen!2slk!4v1549889153192" width="250" height="150" frameborder="0" style="border:0"></iframe>
   </section>
   <!-- End Map section -->
+
+  <!-- Start Footer -->
+  <footer id="mu-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="mu-footer-area">
+            <div class="mu-footer-social">
+            <a href="#"><span class="fa fa-facebook"></span></a>
+            <a href="#"><span class="fa fa-twitter"></span></a>
+            <a href="#"><span class="fa fa-google-plus"></span></a>
+            <a href="#"><span class="fa fa-linkedin"></span></a>
+            <a href="#"><span class="fa fa-youtube"></span></a>
+          </div>
+          <div class="mu-footer-copyright">
+            <p>Designed by <a rel="nofollow" href="http://www.markups.io/">MarkUps.io</a></p>
+          </div>         
+        </div>
+      </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
 
   <!-- jQuery library -->
