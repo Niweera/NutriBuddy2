@@ -65,3 +65,4 @@ function searchENumbers() {
   }
 }
 //end of js file to the allergic_details.html file
+//double check
