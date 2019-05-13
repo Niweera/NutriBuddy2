@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>NutriBuddy | Calcium deficiency</title>
+
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <!-- Date Picker -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap-datepicker.css"
+    />
+    <!-- Fancybox slider -->
+    <link
+      rel="stylesheet"
+      href="assets/css/jquery.fancybox.css"
+      type="text/css"
+      media="screen"
+    />
+    <!-- Theme color -->
+    <link
+      id="switcher"
+      href="assets/css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main style sheet -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Prata"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link href="assets/css/popup_form.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
+
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyA1SGhU7-cunQ7VIrCmAVWSYHfe9-FLb6w",
+        authDomain: "foodanalyser.firebaseapp.com",
+        databaseURL: "https://foodanalyser.firebaseio.com",
+        projectId: "foodanalyser",
+        storageBucket: "foodanalyser.appspot.com",
+        messagingSenderId: "67786128135",
+        appId: "1:67786128135:web:c5de525f78d13905"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      var db = firebase.firestore();
+    </script>
+  </head>
+  <body>
+    <a class="scrollToTop" href="#">
+      <i class="fa fa-angle-up"></i>
+      <span>Top</span>
+    </a>
+
+    <header id="mu-header">
+      <nav class="navbar navbar-default mu-main-navbar" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#navbar"
+              aria-expanded="false"
+              aria-controls="navbar"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- LOGO -->
+            <a class="navbar-brand" href="index.html"
+              ><img src="assets/img/logo.png" alt="Logo img"
+            /></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
+              <li><a href="index.html">HOME</a></li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </nav>
+    </header>
+
+    <section id="mu-slider">
+      <div class="mu-slider-area">
+        <!-- Top slider -->
+        <div class="mu-top-slider">
+          <!-- Top slider single slide -->
+          <div class="mu-top-slider-single">
+            <img src="assets/img/diab.jpg" alt="img" />
+            <!-- Top slider content -->
+            <div class="mu-top-slider-content">
+              <span class="mu-slider-small-title">Welcome</span>
+              <h2 class="mu-slider-title">To NutriBuddy</h2>
+              <p>
+                “Calcium deficiency is a serious health condition that can be
+                avoided by taking a balanced diet with calsium rich food.”
+              </p>
+              <a href="#" class="mu-readmore-btn" onclick="openForm()"
+                >BMI Counter</a
+              >
+              <a href="diabetic_counter.html" class="mu-readmore-btn"
+                >Calorie Counter</a
+              >
+            </div>
+            <!-- / Top slider content -->
+          </div>
+          <!-- / Top slider single slide -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
