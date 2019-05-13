@@ -7,44 +7,121 @@
 
     <title>NutriBuddy | Ingredients</title>
 
-    <link href="assets/css/Counter.css" rel="stylesheet" />
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
+
+    <!-- Font awesome -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Slick slider -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+    <!-- Date Picker -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+      type="text/css"
+      href="assets/css/bootstrap-datepicker.css"
     />
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon" />
-  </head>
-  <body>
-    <div class="container">
-      <h2 class="h2" style="text-align: center">Ingredients</h2>
-      <form>
-        <div class="input-group mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Food Item"
-            aria-label="Food Item"
-            aria-describedby="basic-addon2"
-          />
-          <div class="input-group-append">
-            <button class="btn btn-primary" type="button">Submit</button>
-          </div>
-        </div>
-      </form>
+    <!-- Fancybox slider -->
+    <link
+      rel="stylesheet"
+      href="assets/css/jquery.fancybox.css"
+      type="text/css"
+      media="screen"
+    />
+    <!-- Theme color -->
+    <link
+      id="switcher"
+      href="assets/css/theme-color/default-theme.css"
+      rel="stylesheet"
+    />
 
-      <table class="table">
-        <tr>
-          <td>Ingtredient</td>
-          <td>Amount</td>
-        </tr>
-        <tr>
-          <td>ING1</td>
-          <td>x g</td>
-        </tr>
-      </table>
+    <!-- Main style sheet -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Prata"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <!--START SCROLL TOP BUTTON -->
+  <a class="scrollToTop" href="#">
+    <i class="fa fa-angle-up"></i>
+    <span>Top</span>
+  </a>
+  <!-- END SCROLL TOP BUTTON -->
+  <header id="mu-header">
+    <nav class="navbar navbar-default mu-main-navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- LOGO -->
+          <a class="navbar-brand" href="index.html"
+            ><img src="assets/img/logo.png" alt="Logo img"
+          /></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
+            <li><a href="index.html">HOME</a></li>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </nav>
+  </header>
+  <body
+    style="background-image:url('assets/img/bg.jpg'); height:100%;background-position: center; background-repeat: no-repeat;background-size: cover;"
+  >
+    <div>
+      <section id="mu-about-us" align="center">
+        <div class="resp_code" align="center">
+          <table
+            id="tab"
+            align="center"
+            cellspacing="0"
+            cellpadding="0"
+            style="width:100%;"
+          >
+            <tr>
+              <td align="center">
+                <br />
+                <h2>
+                  <b
+                    ><i><font color="#897b51">Ingredients</font></i></b
+                  >
+                </h2>
+                <hr />
+                <br /><br />
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
     </div>
   </body>
 </html>
