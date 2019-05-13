@@ -44,7 +44,19 @@ function searchENumbers() {
       // do something with the data of each document.
       name = JSON.stringify(data.name);
       preservatives = data.pv;
-      tableBody += '<tr><td>' + JSON.parse(name) + '</td><td>' + preservatives.join(", ") + '</td></tr>';
+
+      var pvString = '';
+      preservatives.forEach(function(item){
+        
+        if (item != ins){
+          pvString += '<span>' + item + '&nbsp; &nbsp; &nbsp; </span>';
+        }else{
+          pvString += '<span style="color:red">' + item + '&nbsp; &nbsp; &nbsp; </span>';
+        }
+        
+      });
+
+      tableBody += '<tr><td>' + JSON.parse(name) + '</td><td>' + pvString + '</td></tr>';
       });
       var tableFooter = '  </tbody></table>';
       document.getElementById('dataTableDiv').innerHTML = tableTemplate+tableBody+tableFooter;
@@ -56,3 +68,10 @@ function searchENumbers() {
 
 
 
+// const items = [1, 29, 47];
+// const copy = [];
+
+// items.forEach(function(item){
+//   copy.push(item*item);
+// });
+// print(copy);
