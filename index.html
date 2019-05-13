@@ -27,11 +27,14 @@
 
     <!-- Main style sheet -->
     <link href="style.css" rel="stylesheet">    
+    <link href="headerstyle.css" rel="stylesheet">    
 
    <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>        
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
+
+    
     
 
   </head>
@@ -48,6 +51,22 @@
       <span>Top</span>
     </a>
   <!-- END SCROLL TOP BUTTON -->
+
+  <!-- START HEADER -->
+  <header>
+    <div class="navbar">
+      <a href="./" class="logo">NutriBuddy</a>
+      <div class="rightnav">
+        <a class="active" href="./">Home</a> 
+      <div class="dropdown">
+        <button class="dropbtn"><a href="#aboutus">About Us</a></button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="#contactus">Contact Us</a></button>
+      </div>
+    </div>
+  </header>
+  <!-- END HEADER -->
  
 
   <!-- Start slider  -->
@@ -88,6 +107,7 @@
   <!-- End slider  -->
 
   <!-- Start About us -->
+  <a name="aboutus"></a> 
   <section id="mu-about-us">
     <div class="container">
       <div class="row">
@@ -173,6 +193,7 @@
 
 
   <!-- Start Contact section -->
+  <a name="contactus"></a> 
   <section id="mu-contact">
     <div class="container">
       <div class="row">
@@ -246,7 +267,6 @@
   <!-- End Map section -->
 
 
-  
   <!-- jQuery library -->
   <script src="assets/js/jquery.min.js"></script>  
   <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -265,6 +285,8 @@
 
   <!-- Custom js -->
   <script src="assets/js/custom.js"></script> 
+
+  
 
   </body>
 </html>
