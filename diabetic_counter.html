@@ -59,8 +59,6 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
               <li><a href="index.html">HOME</a></li>
-              <li><a href="#mu-about-us">ABOUT US</a></li>                       
-              <li><a href="#mu-contact">CONTACT</a></li> 
             </ul>                            
           </div><!--/.nav-collapse -->       
         </div>          
@@ -68,13 +66,14 @@
     </header>
 	
 	
-    <body background="assets/img/bg.jpg">
+    <body style="background-image:url('assets/img/bg.jpg'); height:100%;background-position: center; background-repeat: no-repeat;background-size: cover;">
 
+	  <section id="mu-about-us" align="center">
         <div class="resp_code" align="center">
             <table id ='tab' align='center' cellspacing='0' cellpadding='0' style="width:100%;">
                 <tr>
                     <td align=center><br>
-                        <b>Calorie Calculator</b><br><br>
+                        <h2><b><i><font color="#897b51">Calorie Calculator</font></i></b></h2><hr><br><br>
                         <form name="frm" action="" class='frms noborders'>
                             <table>
                                 <tr>
@@ -147,9 +146,9 @@
 
                                 <tr>
                                     <td colspan='2' align="center">
-                                        <input class='blue_button' type="button" value="Calculate The Calorie" onclick="cc()">
+                                        <input class='blue_button button' type="button" value="Calculate The Calorie" onclick="cc()">
                                         <span id="dumdiv" align="center" style=" font-size: 10px;color: #dadada;">
-                                            <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="index.html">@N</a></span>
+                                            <a id="dum" style="padding-right:0px; text-decoration:none;color: green;text-align:center;" href="index.html"></a></span>
                                     </td>
                                 </tr>
                             </table>
@@ -497,7 +496,8 @@
             }
             window.onload = chk;
         </script>
-		
+	</section>
+	
 		  <!-- Start Footer -->
   <footer id="mu-footer">
     <div class="container">

@@ -6,4 +6,18 @@
             .resp_code {background: none repeat scroll 0 0 #f8f8f8;border: 1px solid #ddd;border-radius: 0.25em;color: #333;font: 1em/1.3em Tahoma,Geneva,sans-serif;margin: 5px 10px 10px 20%;overflow: auto;padding: 10px 20px;width:50%;}
 
             @media only screen and (max-width:650px) {.resp_code {margin: 5px 1px 10px !important;width:auto !important;}}
+			
+			.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+			
         </style>
