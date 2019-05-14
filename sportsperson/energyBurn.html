@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sportsman Options</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/table.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url(images/calGuide.jpg) ; background-size: cover;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="images/logo.png" width="200px" height="20px">
+      <a class="navbar-brand" href="#">Nutribuddy</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="index.html">Sportsman Home</a></li>
+      <li class="active"><a href="#">Calorie Burn Guide </a></li>
+      
+    </ul>
+  </div>
+</nav>
+	
+<div class="form-horizontal col-sm-5 col-sm-offset-4" style="background-color: white">
+  <div class="form-group">
+  	<h2 style="text-align: center;">Calorie Burn Guide</h2><br>
+    <label class="control-label col-sm-5" style="font-size: 15px;">Calorie Amount</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="calCount" placeholder="Enter Calorie Amount">
+    </div>
+  </div>
+  <div class="form-group"> 
+      <div class="col-sm-offset-4 col-sm-10">
+        <button type="submit" class="btn btn-success" onclick="cal()">Guide To Burn Calories</button>
+      </div>
+    </div>
+</div>
+
+<!-- ############################### -->
+
+<div class="container">
+       
+  <table class="table table-hover" style="font-size: 30px;text-align: center; ">
+    <thead>
+      <tr>
+        <th><center>Cycling</center></th>
+        <th><center>Running</center></th>
+        <th><center>Swimming</center></th>
+        <th><center>Tennis</center></th>
+        <th><center>Rowing</center></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td width="10px"><center><img class="img-responsive" src="images/cycling.png" width="100px" height="100px" ></td>
+        <td width="10px"><center><img class="img-responsive" src="images/running.png" width="100px" height="100px" ></center></td>
+        <td width="10px"><center><img class="img-responsive" src="images/swimming.png" width="100px" height="100px" ></center></td>
+        <td width="10px"><center><img class="img-responsive" src="images/tennis.png" width="100px" height="100px" ></center></td>
+        <td width="10px"><center><img class="img-responsive" src="images/rowing.png" width="100px" height="100px" ></center></td>
+      </tr>
+      <tr>
+        <td ><span id="cycling"></span></td>
+        <td><center><span id="running"></span></center></td>
+        <td><center><span id="swimming"></span></center></td>
+        <td><center><span id="tennis"></span></center></td>
+        <td><center><span id="rowing"></span></center></td>
+      </tr>
+      <tr>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ############################### -->
+
+
+
+	<script type="text/javascript">
+		function cal(){
+      var v = document.getElementById("calCount").value;
+      var cyc = v/650; cyc = cyc.toFixed(2);
+       var run = v/318; run = run.toFixed(1);
+      var swim = v/215; swim = swim.toFixed(1);;
+      var ten = v/414; ten = ten.toFixed(1);;
+      var row = v/400; row = row.toFixed(1);;
+
+			document.getElementById("cycling").innerHTML = cyc + " hour";
+      document.getElementById("running").innerHTML = run + " hour";
+      document.getElementById("swimming").innerHTML = swim + " hour";
+      document.getElementById("tennis").innerHTML = ten + " hour";
+      document.getElementById("rowing").innerHTML = row + " hour";
+    }
+
+
+   
+	</script>
+
+
+
+</body>
+</html>
