@@ -32,7 +32,7 @@ function searchENumbers() {
     var query = collectionReference.where("pv", "array-contains", ins);
     var queryBeverages = collectionReferenceBeverages.where("pv", "array-contains", ins);
     
-    var tableTemplate = '<table class="table table-striped table-dark" id="dataTable"><thead><tr><th scope="col">Name</th><th scope="col">Preservatives</th></tr></thead><tbody>';
+    var tableTemplate = '<br><table class="table table-striped table-dark" id="dataTable"><thead><tr><th scope="col">Name</th><th scope="col">Preservatives</th></tr></thead><tbody>';
     var tableBody = '';
 
     var bigArray = [];
@@ -97,7 +97,7 @@ function searchENumbers() {
         var tableFooter = '</tbody></table>';
         document.getElementById('filterInput').style.visibility = 'visible';
         document.getElementById("filterInput").focus();
-        document.getElementById('dataTableDiv').innerHTML = '<br>' + tableTemplate + tableBody + tableFooter;
+        document.getElementById('dataTableDiv').innerHTML = tableTemplate + tableBody + tableFooter;
       }else{
         document.getElementById("ins").focus();
         document.getElementById('filterInput').style.visibility = 'hidden';
