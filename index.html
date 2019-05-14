@@ -76,9 +76,6 @@
             <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a> 
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            
-              
-              
 
               <!-- Rendering list items from the Firebase DB -->
                 <script type="text/javascript">
@@ -87,7 +84,7 @@
                 //=========================
 
                 db.collection('Users').get().then((snapshot) => {
-                  var select_option = '<ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav"><li><a href="#mu-slider">HOME</a></li><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="blog-archive.html">SELECT USER<span class="caret"></span></a><ul class="dropdown-menu" role="menu">';
+                  var select_option = '<ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav"><li><a href="#mu-slider">HOME</a></li><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SELECT USER<span class="caret"></span></a><ul class="dropdown-menu" role="menu">';
                       snapshot.docs.forEach(doc => {
                           let items = doc.data();
 
@@ -106,6 +103,7 @@
                 </ul>
               </div><!--/.nav-collapse -->       
               <!-- Rendering list items from the Firebase DB -->
+
         </div>          
       </nav> 
     </header>
