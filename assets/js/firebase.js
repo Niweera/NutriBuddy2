@@ -97,7 +97,7 @@ function searchENumbers() {
         var tableFooter = '</tbody></table>';
         document.getElementById('filterInput').style.visibility = 'visible';
         document.getElementById("filterInput").focus();
-        document.getElementById('dataTableDiv').innerHTML = tableTemplate + tableBody + tableFooter;
+        document.getElementById('dataTableDiv').innerHTML = '<br>' + tableTemplate + tableBody + tableFooter;
       }else{
         document.getElementById("ins").focus();
         document.getElementById('filterInput').style.visibility = 'hidden';
