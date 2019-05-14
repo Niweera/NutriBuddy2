@@ -95,8 +95,12 @@ function searchENumbers() {
           tableBody += '<tr><td>' + JSON.parse(name) + '</td><td>' + pvString + '</td></tr>';
         });
         var tableFooter = '</tbody></table>';
-        document.getElementById('dataTableDiv').innerHTML = tableTemplate+tableBody+tableFooter;
+        document.getElementById('filterInput').style.visibility = 'visible';
+        document.getElementById("filterInput").focus();
+        document.getElementById('dataTableDiv').innerHTML = tableTemplate + tableBody + tableFooter;
       }else{
+        document.getElementById("ins").focus();
+        document.getElementById('filterInput').style.visibility = 'hidden';
         document.getElementById('dataTableDiv').innerHTML = '<p class="h4 text-center">Sorry No Results to Display!</p>';
       }
     }, 1000);
@@ -104,3 +108,28 @@ function searchENumbers() {
   }
 }
 //end of js file to the allergic_details.html file
+
+
+//start of filter list function
+function filterIt() {
+  // Declare variables 
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("filterInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+//end of filter list funciton
