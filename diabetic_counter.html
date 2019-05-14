@@ -41,6 +41,14 @@
     </a>
   <!-- END SCROLL TOP BUTTON -->
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#config-web-app -->
+    <!-- Firebase credentials -->
+    <script src="assets/js/firebase.js"></script> 
+
   
 	 <header id="mu-header">  
       <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
@@ -57,9 +65,34 @@
             <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="Logo img"></a> 
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-              <li><a href="index.html">HOME</a></li>
-            </ul>                            
+
+            <!-- Rendering list items from the Firebase DB -->
+            <script type="text/javascript">
+                //=========================
+                var db = firebase.firestore();
+                //=========================
+  
+                db.collection('Users').get().then((snapshot) => {
+                  var select_option = '<ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav"><li><a href="/">HOME</a></li><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SELECT USER<span class="caret"></span></a><ul class="dropdown-menu" role="menu">';
+                      snapshot.docs.forEach(doc => {
+                          let items = doc.data();
+  
+                          /* Make data suitable for rendering */
+                          name = JSON.stringify(items.name);
+                          url = JSON.stringify(items.url);
+                        
+                          /* Update the components state with query result */ 
+                          select_option += '<li><a href="/' + JSON.parse(url) + '">' + JSON.parse(name) + '</a></li>';
+                          
+                      });
+                  select_option += '</ul></li>';
+                  document.getElementById('navbar').innerHTML = select_option;
+                });
+                </script>
+                </ul>
+              </div><!--/.nav-collapse -->       
+              <!-- Rendering list items from the Firebase DB -->
+
           </div><!--/.nav-collapse -->       
         </div>          
       </nav> 
