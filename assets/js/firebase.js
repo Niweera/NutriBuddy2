@@ -95,12 +95,12 @@ function searchENumbers() {
           tableBody += '<tr><td>' + JSON.parse(name) + '</td><td>' + pvString + '</td></tr>';
         });
         var tableFooter = '</tbody></table>';
-        document.getElementById('filterInput').style.visibility = 'visible';
+        document.getElementById('filterInput').style.display = 'inline';
         document.getElementById("filterInput").focus();
         document.getElementById('dataTableDiv').innerHTML = tableTemplate + tableBody + tableFooter;
       }else{
         document.getElementById("ins").focus();
-        document.getElementById('filterInput').style.visibility = 'hidden';
+        document.getElementById('filterInput').style.display = 'none';
         document.getElementById('dataTableDiv').innerHTML = '<p class="h4 text-center">Sorry No Results to Display!</p>';
       }
     }, 1000);
