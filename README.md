@@ -10,4 +10,4 @@
 
 #### NutriBuddy is your day to day buddy which will give all the information relating food nutrients and daily consumption.
 
-#### NutriBuddy is live on [https://nutribuddy.niweera.gq](https://nutribuddy.niweera.gq)
+#### NutriBuddy is live on [https://nutribuddy.abhg.gq](https://nutribuddy.abhg.gq)
