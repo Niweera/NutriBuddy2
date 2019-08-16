@@ -39,14 +39,13 @@
 
 <!-- ########################################### -->
 </head>
-<body style="background-color: #c199ff;">
+<body style="background-color: #9b6001; color: #d8b272;">
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
           
-        <a class="navbar-brand" href="https://nutribuddy.niweera.gq/"><img src="images/logo.png" width="200px" height="20px"></a>
-	<a class="navbar-brand" href="https://nutribuddy.niweera.gq/">Nutribuddy</a>
+        <a class="navbar-brand" href="#"><img src="images/logo.png" width="200px" height="20px"></a><a class="navbar-brand" href="#">Nutribuddy</a>
       </div>
       <ul class="nav navbar-nav">
         <li ><a href="index.html">Sportsman Home</a></li>
@@ -57,12 +56,12 @@
   </nav>
 
   <center>
-    <div class="form-horizontal" style="font-size: 25px;background-color: #7aadff;">
+    <div class="form-horizontal" style="font-size: 25px;background-color: #9b6001;">
       <div class="form-group">
         <div class="col-sm-12">
           <h2>Count calories in your meal</h2><br>
           <span>Total Calorie Amount:&nbsp&nbsp</span>
-          <span id=""></span><span>kJ</span>
+          <span id="sp"></span><span>kJ</span>
         </div>
       </div>  
     </div>
@@ -74,10 +73,9 @@
 
 
 
-
   <!-- ########################################################### Calories-->
 
-  <div class="col-sm-2">
+  <div class="col-sm-3">
     <table style="font-size: 30px;" >
       <tr>
         <td>
@@ -89,7 +87,7 @@
     </table>
   </div>
   <!-- ####################################################### -->
-   <div class="col-sm-2">
+   <div class="col-sm-3">
     <table style="font-size: 30px;" >
       <tr>
         <td>
@@ -101,7 +99,7 @@
     </table>
   </div>
    <!-- ####################################################### -->
-   <div class="col-sm-2">
+   <div class="col-sm-3">
     <table style="font-size: 30px;" >
       <tr>
         <td>
@@ -113,7 +111,7 @@
     </table>
   </div>
      <!-- ####################################################### -->
-   <div class="col-sm-4">
+   <div class="col-sm-3">
     <table style="font-size: 30px;" >
       <tr>
         <td>
@@ -137,7 +135,7 @@
         console.log(Number(doc.data().Calories));
         usr.setAttribute("id", doc.data().Calories);
         usr.setAttribute("onclick", "cal(this.id)");
-        usr.textContent = doc.data().name;
+        usr.textContent = doc.data().name + " " + doc.data().ServingSize ;
         ls.appendChild(usr);
       });
     });
@@ -152,7 +150,7 @@
         console.log(Number(doc.data().Calories));
         usr.setAttribute("id", doc.data().Calories);
         usr.setAttribute("onclick", "cal(this.id)");
-        usr.textContent = doc.data().name;
+        usr.textContent = doc.data().name + " " + doc.data().ServingSize ;
         ls1.appendChild(usr);
       });
     });
@@ -167,7 +165,7 @@
         console.log(Number(doc.data().Calories));
         usr.setAttribute("id", doc.data().Calories);
         usr.setAttribute("onclick", "cal(this.id)");
-        usr.textContent = doc.data().name;
+        usr.textContent = doc.data().name + " " + doc.data().ServingSize ;
         ls3.appendChild(usr);
       });
     });
@@ -182,12 +180,31 @@
         console.log(Number(doc.data().Calories));
         usr.setAttribute("id", doc.data().Calories);
         usr.setAttribute("onclick", "cal(this.id)");
-        usr.textContent = doc.data().name;
+        usr.textContent = doc.data().name + " " + doc.data().ServingSize ;
         ls4.appendChild(usr);
       });
     });
    
   </script>
+  <script type="text/javascript">
+    var v = 0 ; 
+
+    function cal1(vd){window.alert(parseFloat(vd));v += parseFloat(vd);
+	document.getElementById("sp").innerHTML = v.toFixed(2);
+    }
+  </script>
+
+<!-- <button id="1" onClick="reply_click(this.id)">B1</button>
+<button id="2" onClick="reply_click(this.id)">B2</button>
+<button id="3" onClick="reply_click(this.id)">B3</button>
+
+<script type="text/javascript">
+function reply_click(clicked_id)
+{
+    cal(clicked_id);
+}
+</script> -->
+
 
 
 

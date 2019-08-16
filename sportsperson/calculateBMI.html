@@ -11,54 +11,106 @@
 </head>
 <body style="background-image: url(images/bmibk.jpg);">
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://nutribuddy.niweera.gq/"><img src="images/logo.png" width="200px" height="20px">
-      <a class="navbar-brand" href="https://nutribuddy.niweera.gq/">Nutribuddy</a>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><img src="images/logo.png" width="200px" height="20px">
+          <a class="navbar-brand" href="#">Nutribuddy</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li ><a href="index.html">Sportsman Home</a></li>
+          <li class="active"><a href="#">Health Measures</a></li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <div class="form-horizontal col-sm-10 col-sm-offset-1 " style="background-color: #7f520a; color: white; border-radius: 5px;">
+      <div class="form-horizontal col-sm-4">
+        <div class="form-group">
+          <center><h2 style="text-align: center;">BMI Calculator<br><h3>Body Mass Index Calculator</h3></h2></center><br>
+          <label class="control-label col-sm-2" style="font-size: 15px;">Height:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="height" placeholder="Enter height in meters">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Weight:</label>
+          <div class="col-sm-10"> 
+            <input type="text" class="form-control" id="Weight" placeholder="Enter Weight in kg">
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-sm-offset-3 col-sm-10">
+            <button type="submit" class="btn btn-success" onclick="calBMI()" style="background-color: #f79902">Calculate BMI</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">BMI:</label>
+          <div class="col-sm-10"> 
+            <input type="text" class="form-control" id="BMI" disabled="">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ## -->
+
+      <div class="form-horizontal col-sm-4 col-sm-offset-2">
+        <div class="form-group">
+          <center><h2 style="text-align: center;">BSA Calculator<br><h3>Body Surface Area Calculator</h3></h2></center><br>
+          <label class="control-label col-sm-2" style="font-size: 15px;">Height:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="height1" placeholder="Enter height in meters">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Weight:</label>
+          <div class="col-sm-10"> 
+            <input type="text" class="form-control" id="Weight1" placeholder="Enter Weight in kg">
+          </div>
+        </div>
+        <div class="form-group"> 
+          <div class="col-sm-offset-3 col-sm-10">
+            <button type="submit" class="btn btn-success" onclick="calBSI()" style="background-color: #f79902">Calculate BSI</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">BSI:</label>
+          <div class="col-sm-10"> 
+            <input type="text" class="form-control" id="BSI" disabled="">
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="index.html">Sportsman Home</a></li>
-      <li class="active"><a href="#">BMI Calculator</a></li>
-      
-    </ul>
-  </div>
-</nav>
-	
-<div class="form-horizontal col-sm-5 col-sm-offset-4" style="background-color: #c2d8fc;font-size:25px;">
-  <div class="form-group">
-  	<h2 style="text-align: center;">BMI Calculator</h2><br>
-    <label class="control-label col-sm-2" style="font-size: 15px;">Height:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="height" placeholder="Enter height in meters">
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Weight:</label>
-    <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="Weight" placeholder="Enter Weight in kg">
-    </div>
-  </div>
-  <div class="form-group"> 
-    <div class="col-sm-offset-3 col-sm-10">
-      <button type="submit" class="btn btn-success" onclick="calBMI()">Calculate BMI</button>
-    </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">BMI:</label>
-    <div class="col-sm-10"> 
-      <input type="text" class="form-control" id="BMI" disabled="">
-    </div>
-</div>
+
+    <!-- ######### -->
+
+
+   
+
+    <br><br><br><br>
 
 
 
-	<script type="text/javascript">
-		function calBMI(){
-			var BMI = document.getElementById("Weight").value/(document.getElementById("height").value*document.getElementById("height").value);
-			document.getElementById("BMI").value = BMI;
-		}
-	</script>
 
-</body>
-</html>
+    <script type="text/javascript">
+      function calBMI(){
+        window.alert("Hiii");
+       var BMI = document.getElementById("Weight").value/(document.getElementById("height").value*document.getElementById("height").value);
+       document.getElementById("BMI").value = BMI;
+     }
+
+     function calBSI(){
+       var BSI =  Math.sqrt(document.getElementById("Weight1").value/(document.getElementById("height1").value)/3600);;
+       document.getElementById("BSI").value = BSI;
+     }
+     function hello(){
+      window.alert("Hwwwwwwwwwwwww");
+     }
+   </script>
+
+ </body>
+ </html>
