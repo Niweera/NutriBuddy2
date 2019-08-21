@@ -9,7 +9,7 @@ td, th {
 }
 
 body:not(.nohover) tbody tr:hover {
-  background-color: #ffa;
+  background-color: #8baa00;
 }
 
 td:hover::after,
@@ -27,7 +27,7 @@ thead th:not(:empty):focus::after {
 
 td:hover::after,
 th:hover::after {
-  background-color: #57f21f;
+  background-color: #6a7a24;
 }
 
 td:focus::after,
